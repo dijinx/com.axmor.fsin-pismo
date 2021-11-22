@@ -1,6 +1,7 @@
 package CensorTests;
 
 import CensorPages.*;
+import UserPages.UserMainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,6 +22,7 @@ public class TestBase { //конфиг для запускаемых тесто�
     public boolean uiModeHeadless = false;
     //переменные страниц
     public CensorLoginPage CensorLoginPage;
+    public UserMainPage UserMainPage;
 
 
     //выполняется перед тестами
@@ -37,6 +39,7 @@ public class TestBase { //конфиг для запускаемых тесто�
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //переменные страниц
         CensorLoginPage = PageFactory.initElements(driver, CensorLoginPage.class);
+        UserMainPage = PageFactory.initElements(driver, UserMainPage.class);
 
     }
 

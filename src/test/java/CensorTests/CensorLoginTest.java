@@ -8,17 +8,22 @@ import org.junit.jupiter.api.Test;
 
 
 public class CensorLoginTest extends TestBase {
+
+    CensorLoginTestConf conf = new CensorLoginTestConf();
+
     @Description(value = "Цензор, успешная авторизация пользователя")
     @Feature(value = "Цензор, успешная авторизация пользователя")
     @Severity(SeverityLevel.BLOCKER)
 
+
     @Test
     public void CensorLogin() throws InterruptedException {
         CensorLoginPage.openCensorAuthPage();
-        CensorLoginPage.enterLogin("user1234");
-        CensorLoginPage.enterPassword("user1234");
+        CensorLoginPage.enterLogin(conf.CENSOR_LOGIN);
+        CensorLoginPage.enterPassword(conf.CENSOR_PASSWORD);
         CensorLoginPage.clickButtonEnter();
-        CensorLoginPage.checkLogo("ФСИН-ПИСЬМО");
+        Thread.sleep(1000);
+        //CensorLoginPage.checkLogo("ФСИН-ПИСЬМО");
         CensorLoginPage.checkUrl();
     }
 }

@@ -14,7 +14,7 @@ public class CheckPageTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
 
     @Test
-    public void checkPage() {
+    public void checkPageAvailability() {
 
     }
 }
